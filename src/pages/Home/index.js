@@ -15,7 +15,7 @@ import { useData } from "../../contexts/DataContext";
 const Page = () => {
   const {data} = useData()
   const filterEvents = data?.events
-  const filterDate = filterEvents?.reduce((prev, next) => prev.date > next.date ? prev : next)
+  const filterDate = filterEvents?.reduce((next, prev) => next.date > prev.date ? next : prev)
   return <>
     <header>
       <Menu />
